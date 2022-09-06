@@ -21,7 +21,7 @@ app.use('/api/messenger',messengerRoute);
 
 const PORT= process.env.PORT || 5000;
 
-app.get('/*',(req,res)=>{
+app.get('/',(req,res)=>{
   res.send('this is from backend server');
   
 })
