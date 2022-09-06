@@ -31,7 +31,7 @@ users.find({},(err,result)=>{
   if(err){
     res.send(err)
   }else{
-    res.send(result+"yoooooooo")
+    res.send(result)
   }
 })
 // res.send("working");
