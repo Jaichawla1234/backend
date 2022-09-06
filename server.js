@@ -7,6 +7,7 @@ const authRouter=require('./routes/authRoute');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const messengerRoute = require('./routes/messengerRoute');
+const users =require("./models/authModel");
 
 dotenv.config({
      path : 'backend/config/config.env'
@@ -22,6 +23,18 @@ const PORT=process.env.PORT || 5000;
 
 app.get('/',(req,res)=>{
   res.send('this is from backend server');
+})
+
+app.get('/af',(req,res)=>{
+
+users.find({},(err,result)=>{
+  if(err){
+    res.send(err)
+  }else{
+    res.semd(result)
+  }
+})
+ 
 })
 
 databaseConnect();
