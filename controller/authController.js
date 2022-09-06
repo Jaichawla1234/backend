@@ -56,7 +56,6 @@ module.exports.userRegister = (req, res) => {
           files.image.originalFilename = newImageName;
 
           const newPath = __dirname + `../../../frontend/public/image/${files.image.originalFilename}`;
-          console.log(newPath);
 
      try {
           const checkUser = await registerModel.findOne({
@@ -98,7 +97,7 @@ const options = { expires : new Date(Date.now() + process.env.COOKIE_EXP * 24 * 
                     } else {
                          res.status(500).json({
                               error: {
-                                   errorMessage : ['Internal1 Server Error']
+                                   errorMessage : ['Interanl Server Error']
                                     }
                                           })
                     }
@@ -108,7 +107,7 @@ const options = { expires : new Date(Date.now() + process.env.COOKIE_EXP * 24 * 
      } catch (error) {
           res.status(500).json({
                error: {
-                    errorMessage : ['Internal2 Server Error']
+                    errorMessage : ['Interanl Server Error']
                }
           })
 
@@ -198,4 +197,3 @@ module.exports.userLogout = (req,res) => {
           success : true
      })
 }
-          
