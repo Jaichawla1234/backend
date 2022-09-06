@@ -23,6 +23,7 @@ const PORT= process.env.PORT || 5000;
 
 app.get('/',(req,res)=>{
   res.send('this is from backend server');
+  
 })
 
 app.get('/read',(req,res)=>{
