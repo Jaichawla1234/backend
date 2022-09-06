@@ -4,7 +4,7 @@ const {userRegister,userLogin,userLogout} = require('../controller/authControlle
 const { authMiddleware } = require('../middleware/authMiddleware');
 
 router.post('/user-login',userLogin);
-router.post('/user-register/',userRegister);
+router.post('/user-register',userRegister);
 router.post('/user-logout',authMiddleware,userLogout);
 
 module.exports = router;
