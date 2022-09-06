@@ -27,14 +27,14 @@ app.get('/',(req,res)=>{
 
 app.get('/read',(req,res)=>{
 
-// users.find({},(err,result)=>{
-//   if(err){
-//     res.send(err)
-//   }else{
-//     res.send(result)
-//   }
-// })
-res.send("working");
+users.find({},(err,result)=>{
+  if(err){
+    res.send(err)
+  }else{
+    res.send(result)
+  }
+})
+// res.send("working");
  
 })
 
