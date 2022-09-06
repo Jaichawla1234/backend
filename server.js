@@ -1,6 +1,7 @@
 const express=require('express');
 const app=express();
 const dotenv = require('dotenv')
+var cors = require('cors');
 
 const databaseConnect = require('./config/database')
 const authRouter=require('./routes/authRoute');
@@ -18,6 +19,12 @@ app.use(cookieParser());
 
 app.use('/api/messenger',authRouter);
 app.use('/api/messenger',messengerRoute);
+
+app.use(cors({
+  origin : [ 'https://chat-application6912.netlify.app' , 'https://chat-app-it-b-c.herokuapp.com/' ],
+  methods:["GET" , "POST" , "PUT", "DELETE"],
+  credentials: true
+}));
 
 const PORT= process.env.PORT || 5000;
 
