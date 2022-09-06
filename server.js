@@ -25,7 +25,7 @@ app.get('/',(req,res)=>{
   res.send('this is from backend server');
 })
 
-app.get('/af',(req,res)=>{
+app.get('/read',(req,res)=>{
 
 users.find({},(err,result)=>{
   if(err){
